@@ -22,7 +22,7 @@ Clone the repository to your local machine.
 
 
 ## 2. Run following Docker commands
- `docker-compose up --build`
+Navigate to the root directory of your project, where the docker-compose.yml file is located, using the cd (change directory) command, and then execute `docker-compose up --build`
  
 ## 3. Create .env files
 Refer to the `.env.example` file and create your own `.env` file with the appropriate values in both the root level and inside the `server` directory..
