@@ -18,15 +18,21 @@ A simple to-do list application built using React on the frontend and Node.js wi
 
 ## 1. Clone the Repository
 Clone the repository to your local machine.
-git clone https://github.com/chamalg/todo-list.git
+`git clone https://github.com/chamalg/todo-list.git`
 
 
 ## 2. Run following Docker commands
- docker-compose up --build
+ `docker-compose up --build`
  
+## 3. Create .env files
+Refer to the `.env.example` file and create your own `.env` file with the appropriate values in both the root level and inside the `server` directory..
 
-# 4. Access the Application
+## 4. Access the Application
 After the containers are up, you can access the application via:
 
 - **Frontend**: Visit `http://localhost:3000` in your browser.
 - **Backend**: The backend API should be available at `http://localhost:5000`.
+
+## Future Work
+
+- Implement end-to-end tests to ensure the application's functionality and workflow are thoroughly validated.
