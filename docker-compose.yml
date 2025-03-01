@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+
+  backend:
+    build:
+      context: ./server
+    container_name: todo-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=1234
+      - DB_NAME=tasks
+    depends_on:
+      - db
+    networks:
+      - todo-network
+
+  frontend:
+    build:
+      context: ./client
+    container_name: todo-frontend
+    ports:
+      - "3000:3000" 
+    depends_on:
+      - backend
+    networks:
+      - todo-network
+
+  db:
+    image: postgres:latest
+    container_name: todo-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: tasks
+    ports:
+      - "5432:5432"
+    volumes:
+      - todo-db-data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d  
+    networks:
+      - todo-network
+
+networks:
+  todo-network:
+    driver: bridge
+
+volumes:
+  todo-db-data:

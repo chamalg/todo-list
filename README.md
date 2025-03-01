@@ -12,8 +12,21 @@ A simple to-do list application built using React on the frontend and Node.js wi
 - **Frontend**: React, HTML, CSS
 - **Backend**: Node.js, Express
 - **Database**: PostgreSQL
+- **Containerization**: Docker
 
 ## Installation Instructions
 
-### 1. Clone the Repository
+## 1. Clone the Repository
 Clone the repository to your local machine.
+git clone https://github.com/chamalg/todo-list.git
+
+
+## 2. Run following Docker commands
+ docker-compose up --build
+ 
+
+# 4. Access the Application
+After the containers are up, you can access the application via:
+
+- **Frontend**: Visit `http://localhost:3000` in your browser.
+- **Backend**: The backend API should be available at `http://localhost:5000`.
